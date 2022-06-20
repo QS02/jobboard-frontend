@@ -46,10 +46,12 @@ const JobCreate = () => {
   const onSubmit = () => {
     setComplete(true);
     if (id === "new") {
-      dispatch(createJob({ title, description }));
+      dispatch(createJob({ title, description }));      
     } else {
       dispatch(updateJob(id, { title, description, status }));
     }
+    setTitle("");
+    setDescription("");
   };
 
   const returnToJobs = () => {
